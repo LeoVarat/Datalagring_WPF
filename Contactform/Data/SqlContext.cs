@@ -26,7 +26,8 @@ namespace Contactform.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            base.OnConfiguring(optionsBuilder);
+            if (!optionsBuilder.IsConfigured)
+                optionsBuilder.UseSqlServer(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\PC\Desktop\Repositories\Datalagring_WPF\Contactform\Data\Contactform_db.mdf;Integrated Security=True;Connect Timeout=30");
         }
     }
 }

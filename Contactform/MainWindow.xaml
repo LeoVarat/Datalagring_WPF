@@ -5,8 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Contactform"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="500" Width="1000">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
 
+        <StackPanel Grid.Column="0" Background="#292b29">
+            <RadioButton Content="Start" FontSize="15" Foreground="#0cac2e" IsChecked="True"/>
+            <RadioButton Content="Add Customer" FontSize="15" Foreground="#0cac2e"/>
+            <RadioButton Content="Customer List" FontSize="15" Foreground="#0cac2e"/>
+            <RadioButton Content="Add Event" FontSize="15" Foreground="#0cac2e"/>
+            <RadioButton Content="Event List" FontSize="15" Foreground="#0cac2e"/>
+            <RadioButton Content="Add Status" FontSize="15" Foreground="#0cac2e"/>
+        </StackPanel>
     </Grid>
 </Window>
