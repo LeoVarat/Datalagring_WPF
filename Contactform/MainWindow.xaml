@@ -4,8 +4,13 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Contactform"
+        xmlns:viewModel="clr-namespace:Contactform.Models.ViewModels"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="1000">
+        Title="MainWindow" Height="450" Width="800">
+    
+    <Window.DataContext>
+        <viewModel:MainViewModel />
+    </Window.DataContext>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"/>
@@ -13,12 +18,14 @@
         </Grid.ColumnDefinitions>
 
         <StackPanel Grid.Column="0" Background="#292b29">
-            <RadioButton Content="Start" FontSize="15" Foreground="Wheat" IsChecked="True" Style="{StaticResource MenuItemTemplate}"/>
-            <RadioButton Content="Add Customer" FontSize="15" Foreground="Wheat" Style="{StaticResource MenuItemTemplate}"/>
-            <RadioButton Content="Customer List" FontSize="15" Foreground="Wheat" Style="{StaticResource MenuItemTemplate}"/>
-                <RadioButton Content="Add Event" FontSize="15" Foreground="Wheat" Style="{StaticResource MenuItemTemplate}"/>
-                <RadioButton Content="Event List" FontSize="15" Foreground="Wheat" Style="{StaticResource MenuItemTemplate}"/>
-                <RadioButton Content="Add Status" FontSize="15" Foreground="Wheat" Style="{StaticResource MenuItemTemplate}"/>
+            <RadioButton Content="Start" FontSize="15" Foreground="Wheat" IsChecked="True" Style="{StaticResource MenuItemTemplate}" Command="{Binding StartViewCommand}" />
+            <RadioButton Content="Add Customer" FontSize="15" Foreground="Wheat" Style="{StaticResource MenuItemTemplate}" Command="{Binding NewUserViewCommand}" />
+            <RadioButton Content="Customer List" FontSize="15" Foreground="Wheat" Style="{StaticResource MenuItemTemplate}" Command="{Binding UserViewCommand}" />
+            <RadioButton Content="Add Event" FontSize="15" Foreground="Wheat" Style="{StaticResource MenuItemTemplate}" Command="{Binding NewEventViewCommand}" />
+            <RadioButton Content="Event List" FontSize="15" Foreground="Wheat" Style="{StaticResource MenuItemTemplate}" Command="{Binding EventViewCommand}" />
+            <RadioButton Content="Add Status" FontSize="15" Foreground="Wheat" Style="{StaticResource MenuItemTemplate}" Command="{Binding NewStatusViewCommand}" />
         </StackPanel>
+
+        <ContentControl Grid.Column="1" Margin="10" Content="{Binding CurrentView}" />
     </Grid>
 </Window>
