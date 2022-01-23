@@ -25,8 +25,8 @@ namespace Contactform.Services
                 Description = description,
                 EventId = eventid,
                 UserId = userid,
-                Created = created,
-                LastChange = lastchanged
+                Created = DateTime.Now,
+                LastChange = DateTime.Now,
             });
         }
 

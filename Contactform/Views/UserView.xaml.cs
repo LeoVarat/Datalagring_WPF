@@ -23,6 +23,11 @@ namespace Contactform.Views
         public UserView()
         {
             InitializeComponent();
+            lvUsers.Items.Clear();
+            foreach (var user in userService.GetAll())
+            {
+                lvUsers.Items.Add(user);
+            }
         }
     }
 }

@@ -16,19 +16,19 @@
                 <view:UserView />
             </DataTemplate>
             <DataTemplate DataType="{x:Type viewModel:NewUserViewModel}">
-                <view:NewUserView/>
+                <view:NewUserView />
             </DataTemplate>
             <DataTemplate DataType="{x:Type viewModel:EventViewModel}">
-                <view:EventView/>
+                <view:EventView />
             </DataTemplate>
             <DataTemplate DataType="{x:Type viewModel:NewEventViewModel}">
-                <view:NewEventView/>
+                <view:NewEventView />
             </DataTemplate>
             <DataTemplate DataType="{x:Type viewModel:StartViewModel}">
-                <view:StartView/>
+                <view:StartView />
             </DataTemplate>
             <DataTemplate DataType="{x:Type viewModel:NewStatusViewModel}">
-                <view:NewStatusView/>
+                <view:NewStatusView />
             </DataTemplate>
             
         </ResourceDictionary>

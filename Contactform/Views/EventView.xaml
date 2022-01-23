@@ -7,6 +7,68 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <Label Content="EventView"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="0" Text="Event List" FontSize="30" HorizontalAlignment="Center" Margin="7" VerticalAlignment="Center"  />
+            </Grid>
+
+            <Grid Margin="7">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="6*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="0" Text="#" />
+                <TextBlock Grid.Column="1" Text="Header" />
+                <TextBlock Grid.Column="2" Text="Description" />
+                <TextBlock Grid.Column="3" Text="User" />
+                <TextBlock Grid.Column="3" Text="Status" />
+                <TextBlock Grid.Column="3" Text="Created" />
+                <TextBlock Grid.Column="3" Text="Last Changed" />
+            </Grid>
+        </StackPanel>
+
+
+        <ListView x:Name="lvUsers" DataContext="Wpf.Models.User" Grid.Row="1" Background="Transparent" HorizontalContentAlignment="Stretch" VerticalAlignment="Stretch">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.5*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="6*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Grid.Column="0" Text="{Binding Id}"  />
+                        <TextBlock Grid.Column="1" Text="{Binding Header}" />
+                        <TextBlock Grid.Column="2" Text="{Binding Description}" />
+                        <TextBlock Grid.Column="3" Text="{Binding User.Name}" />
+                        <TextBlock Grid.Column="4" Text="{Binding Status.Name}" />
+                        <TextBlock Grid.Column="5" Text="{Binding Create Date}" />
+                        <TextBlock Grid.Column="6" Text="{Binding Last Update}" />
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 </UserControl>

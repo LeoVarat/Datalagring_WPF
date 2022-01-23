@@ -7,6 +7,77 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <Label Content="UserView"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="0" Text="Customer List" FontSize="18" HorizontalAlignment="Left" Margin="7" VerticalAlignment="Center"  />
+            </Grid>
+
+            <Grid Margin="7">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+
+
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="0" Text="#" />
+                <TextBlock Grid.Column="1" Text="User Name" />
+                <TextBlock Grid.Column="2" Text="Email" />
+                <TextBlock Grid.Column="3" Text="First Name" />
+                <TextBlock Grid.Column="4" Text="Last Name" />
+                <TextBlock Grid.Column="5" Text="Street" />
+                <TextBlock Grid.Column="6" Text="Postal Code" />
+                <TextBlock Grid.Column="7" Text="County" />
+                <TextBlock Grid.Column="8" Text="Country" />
+            </Grid>
+        </StackPanel>
+
+
+        <ListView x:Name="lvUsers" DataContext="Wpf.Models.User" Grid.Row="1" Background="Transparent" HorizontalContentAlignment="Stretch" VerticalAlignment="Stretch">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.5*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Grid.Column="0" Text="{Binding Id}"  />
+                        <TextBlock Grid.Column="1" Text="{Binding User Name}" />
+                        <TextBlock Grid.Column="2" Text="{Binding Contact.FirstName}" />
+                        <TextBlock Grid.Column="3" Text="{Binding Contact.LastName}" />
+                        <TextBlock Grid.Column="4" Text="{Binding Contact.Email}" />
+                        <TextBlock Grid.Column="5" Text="{Binding Adress.StreetName}" />
+                        <TextBlock Grid.Column="6" Text="{Binding Adress.PostalCode}" />
+                        <TextBlock Grid.Column="7" Text="{Binding Adress.County}" />
+                        <TextBlock Grid.Column="8" Text="{Binding Adress.Country}" />
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 </UserControl>

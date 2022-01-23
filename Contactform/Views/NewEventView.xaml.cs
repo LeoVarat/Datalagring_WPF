@@ -42,10 +42,9 @@ namespace Contactform.Views
                 !string.IsNullOrEmpty(cbUser.Text) &&
                 !string.IsNullOrEmpty(cbStatus.Text))
             {
-                DateTime Created = DateTime.Now;
-                DateTime LastUpdate = DateTime.Now;
+
                 if (userEventService.Create(
-                    tbHeader.Text, 
+                    tbHeader.Text,
                     tbDescription.Text,
                     (int)cbUser.SelectedValue,
                     (int)cbStatus.SelectedValue))
